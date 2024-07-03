@@ -1,0 +1,18 @@
+## Commands & Customization
+### General
+
+### Security
+**> VERIFY INTEGRITY**<br>
+To verify the integrity of an eNeX-encrypted file (only files with the official eNeX header!), use this command:
+```bash
+echo -n "file: "; read filename; content=$(cat "$filename" || echo "CC"); header="#!/bin/bash\nif ! command -v openssl >/dev/null 2>&1; then echo \"OpenSSL is not installed. Please install it and try again."; exit 1; fi; if [ ! -d \"/etc/enex" ]; then mkdir /etc/enex || echo \"error: could not create directory /etc/enex"; fi; if [ ! -d \"/etc/enex/temp" ]; then mkdir /etc/enex/temp || echo \"error: could not make directory /etc/enex/temp"; fi; filepath=$(realpath \"$0"); fullcontent=$(cat $filepath); content="${fullcontent#*\<content\>}"; content="${content%%\<\/content\>*}"; filename=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 100 | head -n 1); temp_file="/etc/enex/temp/${filename}.XXXXXXXXX"; touch \"$temp_file"; trap 'rm -f \"$temp_file"' EXIT; chmod +x $temp_file; password="${fullcontent#*\<password\>}"; password="${password%%\<\/password\>*}"; if [[ \"$password" == \"" ]]; then echo -n \"password: \"; read -s password; fi; content_file="/etc/enex/temp/content.${filename}.XXXXXXXX"; touch \"$content_file"; echo \"$content" > \"$content_file"; openssl aes-256-cbc -a -d -salt -pbkdf2 -in \"$content_file" -out \"$temp_file" -pass pass:"$password" || echo \"ERROR: DECRYPTION FAILED."; \"$temp_file"; rm \"$temp_file" || echo \"ERROR: TEMPORARY FILE COULD NOT BE REMOVED. PLEASE REMOVE IT MANUALLY: rm -f ${temp_file}"; rm \"$content_file" || echo \"ERROR: TEMPORARY CONTENT FILE COULD NOT BE REMOVED. PLEASE REMOVE IT MANUALLY: rm -f ${content_file}"; exit"; if [[ "$content" == "${header}"* ]]; then echo "HEADER_INTEGRITY_VERIFIED"; elif [[ "$content" == "CC" ]]; then echo "HEADER_INTEGRITY_COULD_NOT_BE_VERIFIED"; else echo "HEADER_INTEGRITY_FAILED"; fi; exit
+```
+If you have a customized header, you can use the following command to compare the /etc/enex/header.md header file and the header in an eNeX-encrypted file, which *should* contain the same header.
+```bash
+echo -n "file: "; read filename; content=$(cat "$filename" || echo "CC"); header=$(cat /etc/enex/header.md); if [[ "$content" == "${header}"* ]]; then echo "HEADERS_MATCH"; echo "THE INTEGRITY OF THE /etc/enex/header.md FILE CANNOT BE VERIFIED! IF YOU HAVE TAMPERED WITH THE HEADER IN ANY WAY, YOU ARE RESPONSIBLE FOR ITS INTEGRITY AS IT CANNOT BE OFFICIALLY VERIFIED."; else echo "HEADERS_DO_NOT_MATCH"; fi; exit
+```
+To check if you have an official eNeX header, use this command:
+```bash
+
+```
+### Other
