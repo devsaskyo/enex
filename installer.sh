@@ -21,7 +21,7 @@ echo "#!/bin/bash" > /usr/bin/enex || echo "C20"
 echo "/etc/enex/encrypt.sh \"\$@\"" >> /usr/bin/enex || echo "C21"
 chmod +x /usr/bin/enex || echo "COULDN'T MAKE /usr/bin/enex EXECUTABLE"
 echo "${header} copying uninstall script..."
-cp ./resource/uninstall.md /etc/enex-uninstall.sh || echo "COULDN'T COPY RESOURCE FILES FOR UNINSTALL SCRIPT"
+cp ./resources/uninstall.md /etc/enex-uninstall.sh || echo "COULDN'T COPY RESOURCE FILES FOR UNINSTALL SCRIPT"
 chmod +x /etc/enex-uninstall.sh || echo "COULDN'T MAKE /etc/enex/uninstall.sh EXECUTABLE"
 echo "${header} eNeX installed successfully."
 exit
