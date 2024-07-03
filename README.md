@@ -5,7 +5,7 @@ With eNeX, you can encrypt executable files while still keeping them executable.
 <br>
 The encrypted executables are password protected.
 <br>
-(password protection can be disabled when encrypting the executable.)
+(Password protection can be disabled when encrypting the executable.)
 <br>
 <br>
 [How it works](#how-it-works)
