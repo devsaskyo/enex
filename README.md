@@ -14,7 +14,9 @@ If you need a more secure option of executing eNeX-encrypted files, you can cust
 ## Install
 To install eNeX, run this on your linux server:
 <br>
-`git clone https://github.com/devsaskyo/enex.git; cd enex; chmod +x installer.sh; sudo ./installer.sh`
+```bash
+git clone https://github.com/devsaskyo/enex.git; cd enex; chmod +x installer.sh; sudo ./installer.sh
+```
 
 ### Formatted header.md
 ```bash
