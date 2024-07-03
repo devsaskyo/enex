@@ -1,9 +1,12 @@
 #!/bin/bash
-                                                           
+
+
 prefix="[eNeX] "
-error=""                                                   jfile="$1"
+error=""
+jfile="$1"
 if [[ "$jfile" == "" ]]; then
-  echo -e "${prefix} usage: enex <file>\nhelp: enex --help"; exit 1                                                   fi
+  echo -e "${prefix} usage: enex <file>\nhelp: enex --help"; exit 1
+fi
 if [[ "$jfile" == "--help" ]]; then
   echo -e "Usage: 'enex <file>'\nUsing enex with only the file parameter will require additional steps before the file is encrypted.\nIf you want to encrypt a file using a single command, this is the format:\n'enex -p <file> -n/-g/<password> --replace/<filename>'\n-p: parameter prefix (necessary for using parameters)\n<file>: the file that will be encrypted\n-n: password protection will NOT be used\n-g: generates a random password\n<password>: if you want to use your own password, put it here\n--replace: the encrypted file will replace the original\n<filename>: if you do NOT want to replace the original file, put the new filename here\nYou can find more information at:\nhttps://github.com/devsaskyo/enex"; exit
 fi
