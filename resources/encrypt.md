@@ -12,8 +12,8 @@ if [[ "$jfile" == "--help" ]]; then
 fi
 if [[ "$jfile" == "-p" ]]; then
   usep="true"
+  jfile="$2"
 fi
-jfile="$2"
 file=$(realpath $jfile)
 if [ ! -f $file ]; then
   echo "${prefix} error: file '${file}' not found."; exit 1
