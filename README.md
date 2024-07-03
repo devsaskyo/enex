@@ -30,19 +30,19 @@ git clone https://github.com/devsaskyo/enex.git; cd enex; chmod +x installer.sh;
 ```
 
 ## --help
-```plaintext
-Usage: 'enex <file>'
+Usage: 'enex <file>'<br>
 Using enex with only the file parameter will require additional steps before the file is encrypted.
-If you want to encrypt a file using a single command, this is the format:
+<br>If you want to encrypt a file using a single command, this is the format:<br>
+```bash
 'enex -p <file> -n/-g/<password> --replace/<filename>'
--p: parameter prefix (necessary for using parameters)
-<file>: the file that will be encrypted
--n: password protection will NOT be used
--g: generates a random password
-<password>: if you want to use your own password, put it here
---replace: the encrypted file will replace the original
-<filename>: if you do NOT want to replace the original file, put the new filename here
 ```
+`-p`: parameter prefix (necessary for using parameters)<br>
+`<file>`: the file that will be encrypted<br>
+`-n`: password protection will NOT be used<br>
+`-g`: generates a random password
+`<password>`: if you want to use your own password, put it here<br>
+`--replace`: the encrypted file will replace the original<br>
+`<filename>`: if you do NOT want to replace the original file, put the new filename here
 
 ## Customize!
 You can find a lot of customizations and easy ways to make your own [HERE](DOCS/CUSTOMIZE.md)!
