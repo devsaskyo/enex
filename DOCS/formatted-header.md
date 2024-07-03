@@ -66,7 +66,7 @@ temp_file="/etc/enex/temp/${filename}.XXXXXXXXX"
 touch "$temp_file"
 #delete the temp file upon script exit
 trap 'rm -f "$temp_file"' EXIT
-#makr the temp file executable
+#make the temp file executable
 chmod +x $temp_file
 #get the password from the encrypted file
 password="${fullcontent#*\<password\>}"
