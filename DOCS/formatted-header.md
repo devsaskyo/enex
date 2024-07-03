@@ -44,7 +44,7 @@ if ! command -v openssl >/dev/null 2>&1; then
   echo "OpenSSL is not installed. Please install it and try again."
   exit 1
 fi
-#check if the /etc/enex exists, and if it doesn't, create one. (This makes sure that any eNeX-encrypted file can be decrypted without the use of eNeX)
+#check if the /etc/enex directory exists, and if it doesn't, create one. (This makes sure that any eNeX-encrypted file can be decrypted without the use of eNeX)
 if [ ! -d "/etc/enex" ]; then
   mkdir /etc/enex || echo "error: could not create directory /etc/enex"
 fi
