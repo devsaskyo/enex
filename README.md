@@ -9,17 +9,12 @@ When you encrypt a file using eNeX, it adds a [header](resources/header.md) at t
 <br>
 The decrypted code is stored in a temporary file in the `/etc/enex/temp` directory. This file is removed after the code executes. The installer will set the permissions of this directory to 600.
 <br>
-If you need a more secure option of executing eNeX-encrypted files, you can customize the header. You can find a formatted header.md at the end of this README.
+If you need a more secure option of executing eNeX-encrypted files, you can customize the header. You can find a formatted header.md [here](DOCS/formatted-header.md).
 
 ## Install
 To install eNeX, run this on your linux server:
 <br>
 ```bash
 git clone https://github.com/devsaskyo/enex.git; cd enex; chmod +x installer.sh; sudo ./installer.sh
-```
-
-### Formatted header.md
-```bash
-#!/bin/bash
 ```
 
