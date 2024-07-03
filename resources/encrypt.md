@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-prefix="[eNeX] "
+prefix="[eNeX]"
 error=""
 jfile="$1"
 if [[ "$jfile" == "" ]]; then
