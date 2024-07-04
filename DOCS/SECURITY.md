@@ -10,10 +10,9 @@ If you have a customized header, you can use the following command to compare th
 ```bash
 official_header="/etc/enex/header.md"; echo -n "file: "; read file; if [ ! -f "$file" ]; then echo "Error: File '$file' not found."; else file_header=$(cat "$file"); official_header_content=$(cat "$official_header"); file_header="${file_header%%\<content\>*}"; file_header=$(echo "$file_header" | sed '$d'); if [[ "${official_header_content}" == "${file_header}" ]]; then echo -e "The file '$file' \e[32;40mMATCHES \e[0mthe eNeX header stored in /etc/enex/header.md.\n\e[43;30mThis does NOT mean that execution of the file is secure.\n\e[0mThe header.md file could be tampered with and its integrity cannot be verified.\e[0m"; else echo -e "\e[41;37mThe file '$file' DOES NOT MATCH the header stored in /etc/enex/header.md.\n\e[43;30mTHE HEADER FILE AND/OR THE HEADER WITHIN THE PROVIDED FILE HAVE BEEN TAMPERED WITH.\e[0m"; fi; fi
 ```
-<br>
 To check if you have an official eNeX header in the `/etc/enex/header.md` file, use this command:
-```bash
+``bash
 
-```
+``
 <br>
 ### Other
