@@ -1,7 +1,5 @@
-## Commands & Customization
-### General
-
-### Security
+## Security
+### Integrity
 **> VERIFY INTEGRITY**<br>
 To verify the integrity of an eNeX-encrypted file (only files with the official eNeX header!), use this command:
 ```bash
